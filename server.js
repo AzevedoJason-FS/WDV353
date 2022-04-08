@@ -4,9 +4,62 @@ const app = express();
 
 app.get("/", (req, res, next) => {
     res.json({
-        message: "Did you GET IT!"
+        message: "using GET /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
     })
 });
+
+app.post("/", (req, res, next) => {
+    res.json({
+        message: "using POST /",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method
+        }
+    })
+});
+
+app.get("/:id", (req, res, next) => {
+    res.json({
+        message: "using GET by ID",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method,
+            id: req.params.id,
+        }
+    })
+});
+
+app.patch("/:id", (req, res, next) => {
+    res.json({
+        message: "using PATCH by ID",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method,
+            id: req.params.id,
+        }
+    })
+});
+
+app.delete("/:id", (req, res, next) => {
+    res.json({
+        message: "using DELETE by ID",
+        metadata: {
+            host: req.hostname,
+            port: process.env.port,
+            method: req.method,
+            id: req.params.id,
+        }
+    })
+});
+
 
 
 //middleware modules for Error Handling
