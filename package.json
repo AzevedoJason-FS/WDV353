@@ -1,0 +1,24 @@
+{
+  "name": "wdv353",
+  "version": "1.0.0",
+  "description": "NodeJS Test App",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server"
+  },
+  "keywords": [
+    "NodeJS",
+    "API",
+    "Test"
+  ],
+  "author": "Jason Azevedo",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
